@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | Premium Car Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .car-card:hover .car-image {
+            transform: scale(1.05);
+        }
+        
+        .car-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .price-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Product</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Discover Your Dream Car</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Explore our exclusive collection of premium vehicles from around the world</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition">
+                    Browse Collection
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-full font-semibold transition">
+                    Book a Test Drive
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Collection -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Collection</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="car-container">
+                <!-- Cars will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Car data
+        const cars = [
+            {
+                id: 1,
+                name: "Porsche 911 Turbo S",
+                price: "$203,500",
+                image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                category: "sports",
+                specs: {
+                    engine: "3.7L Twin-Turbo Flat-6",
+                    power: "640 HP",
+                    acceleration: "2.6s 0-60 mph",
+                    topSpeed: "205 mph"
+                }
+            },
+            {
+                id: 2,
+                name: "Mercedes-Benz S-Class",
+                price: "$114,000",
+                image: "https://vehicle-images.dealerinspire.com/36a4-110012062/thumbnails/large/W1K6G7GB7RA270300/640c36d634b8ae6584b5c3aea2dce49f.jpg",
+                category: "luxury",
+                specs: {
+                    engine: "3.0L Turbo Inline-6",
+                    power: "429 HP",
+                    acceleration: "4.9s 0-60 mph",
+                    topSpeed: "155 mph"
+                }
+            },
+            {
+                id: 3,
+                name: "Tesla Model X Plaid",
+                price: "$108,990",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WD-OsNEMVIaXoQXt6LY6fndns8O2C_MhpA&s",
+                category: "electric",
+                specs: {
+                    engine: "Tri Motor AWD",
+                    power: "1,020 HP",
+                    acceleration: "2.5s 0-60 mph",
+                    topSpeed: "163 mph",
+                    range: "348 miles"
+                }
+            },
+            {
+                id: 4,
+                name: "Range Rover Autobiography",
+                price: "$156,000",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKFCd6qq0AJelYCSkLptuH62c358aUtxf9Aw&s",
+                category: "suv",
+                specs: {
+                    engine: "4.4L Twin-Turbo V8",
+                    power: "523 HP",
+                    acceleration: "4.4s 0-60 mph",
+                    topSpeed: "155 mph"
+                }
+            },
+            {
+                id: 5,
+                name: "Ferrari 296 GTB",
+                price: "$322,986",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLUPkJazMFZL-uMPmbdNUCTXDl3wmDKmJEzQ&s",
+                category: "sports",
+                specs: {
+                    engine: "3.0L Twin-Turbo V6 Hybrid",
+                    power: "819 HP",
+                    acceleration: "2.9s 0-60 mph",
+                    topSpeed: "205 mph"
+                }
+            },
+            {
+                id: 6,
+                name: "BMW i7 xDrive60",
+                price: "$120,295",
+                image: "https://di-uploads-pod2.dealerinspire.com/bmwofwesleychapel/uploads/2024/07/2024-bmw-i7-m70-1024x637.png ",
+                category: "electric",
+                specs: {
+                    engine: "Dual Motor AWD",
+                    power: "536 HP",
+                    acceleration: "4.5s 0-60 mph",
+                    topSpeed: "149 mph",
+                    range: "318 miles"
+                }
+            }
+        ];
+
+        // Load cars on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCars(cars);
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    if (filter === 'all') {
+                        displayCars(cars);
+                    } else {
+                        const filteredCars = cars.filter(car => car.category === filter);
+                        displayCars(filteredCars);
+                    }
+                });
+            });
+        });
+
+        // Display cars function
+        function displayCars(carsToDisplay) {
+            const container = document.getElementById('car-container');
+            container.innerHTML = '';
+            
+            carsToDisplay.forEach(car => {
+                const carCard = document.createElement('div');
+                carCard.className = 'car-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition';
+                carCard.innerHTML = `
+                    <div class="relative overflow-hidden h-64">
+                        <img src="${car.image}" alt="${car.name}" class="car-image w-full h-full object-cover">
+                        <div class="price-tag">${car.price}</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">${car.name}</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${car.specs.engine}</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${car.specs.power}</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${car.specs.acceleration}</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="text-blue-500 hover:text-blue-700 font-semibold transition">
+                                <i class="fas fa-info-circle mr-2"></i>Details
+                            </button>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition">
+                                <i class="fas fa-shopping-cart mr-2"></i>Buy Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(carCard);
+            });
+        }
+    </script>
+</body>
+</html>
