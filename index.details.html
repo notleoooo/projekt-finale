@@ -1,149 +1,150 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="cars.html"> 
+    <title>Luxury Cars Overview</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .car-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-card p {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .car-card p::before {
+            content: "🚘 ";
+        }
+
+        @media (max-width: 768px) {
+            .car-card {
+                width: 100%;
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
-<body >
-    
-
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-<div class="aleafurniture">
-    <img src="https://hips.hearstapps.com/hmg-prod/images/911-turbo-19-1583172084.jpg?crop=0.668xw:1.00xh;0.178xw,0&resize=1200:*" height="200px" width="200px">
-
-
-    <p> 🔧 Engine & Performance
-Engine: 3.7-liter twin-turbocharged flat-six engine
-
-Power Output: 650 PS (478 kW)
-
-Torque: 800 Nm
-
-Transmission: 8-speed Porsche Doppelkupplung (PDK) dual-clutch transmission
-
-Acceleration (0–100 km/h): 2.7 seconds
-
-Top Speed: 330 km/h
-
-
-</p>
-    
-
-
-</div>
-
-<div class="aleafurniture">
-     <img src="https://vehicle-images.dealerinspire.com/e3dc-110012062/W1KAF8AB3RR221723/5078daafea0bf9035b671b7ea1fdb0ed.jpg" height="200px" width="200px">
-
-
-
-    <p>🚗 Mercedes-Benz S-Class (Quick Overview)
-Flagship luxury sedan from Mercedes-Benz.
-
-Stands for “Sonderklasse” (Special Class).
-
-Current generation: W223 (launched in 2020).
-
-🔧 Performance & Power
-Engines: Inline-6, V8, plug-in hybrids, AMG variants.
-
-Transmission: 9-speed 
-
-</p>
-   
-
-</div>
-
-<div class="aleafurniture">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB92InrJ9I2ib1H9PXpn08K0K6g9f9xOdYSg&s" height="200px" width="200px">
-    
-
-
-    <p> 0–60 mph in 1.99 seconds
-
-Top speed of 200 mph
-
-1,020 horsepower from a tri-motor all-wheel drive
-
-Range: Up to 396 miles (EPA) or ~695 km (WLTP)
-
-Interior: 17" touchscreen, 22-speaker audio, premium seating
-
-Price: Starts around $91,880 (US)
-
-It's one of the fastest and most advanced EVs on the market.
-</p>
- 
-
-
-
-
-</div>
-
-<div class="aleafurniture">
-    
-
-
-    <p>Prodhuesi: Land Rover (nën pronësinë e Jaguar Land Rover, një kompani britanike në pronësi të Tata Motors nga India).
-
-Modeli i parë: U prezantua në vitin 1970.
-
-Kategoria: SUV luksoz me kapacitete të larta për terrene të vështira.
-
-Llojet: Përfshin disa versione si Range Rover, Range Rover Sport,
-    </p>
-
-</div>
-<div class="aleafurniture">
-<img src="*" height="200px" width="200px">
-
-
-
-<p>Modeli: 296 GTB (Gran Turismo Berlinetta).
-
-Viti i prezantimit: 2021.
-
-Motori: 3.0 litra V6 me turbo + motor elektrik (hibrid plug-in).
-
-Fuqia totale: 819 kuaj fuqi (HP).
-
-Përshpejtimi: 0-100 km/h për rreth 2.9 sekonda.
-
-Shpejtësia maksimale: Mbi 330 km/h.
-
-Transmisioni: 8-shpejtësi 
-</p>
-
-   
-
-</div>
-<div class="aleafurniture">
-    <img src="https://mystrongad.com/LRR_LandRoverRoanoke/Interactive/Range%20Rover%20Sport/2024/2024-Range-Rover-Sport-White-SM.webp " height="200px" width="200px">
-
-
-    <p>Prodhuesi: BMW (Gjermani).
-
-Modeli: i7 xDrive60 (version elektrik i Serisë 7).
-
-Viti i lansimit: 2022.
-
-Lloji: Sedan luksoz, 100% elektrik.
-
-Motori: Dy motorë elektrikë (nga një në secilën bosht).
-
-Fuqia totale: 544 kuaj fuqi (HP).
-
-Përshpejtimi: 0-100 km/h për rreth 4.7 sekonda.
-
-Autonomia (WLTP)
-</p>
-
-
-
-</div>
-
-</div>
+<body>
+
+    <h1 style="text-align:center; color:#333;">Luxury & Performance Cars</h1>
+
+    <div class="container">
+        
+        <div class="car-card">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/911-turbo-19-1583172084.jpg?crop=0.668xw:1.00xh;0.178xw,0&resize=1200:*" alt="Porsche 911 Turbo">
+            <p><strong>Porsche 911 Turbo S</strong><br>
+            Engine: 3.7L twin-turbo flat-six<br>
+            Power: 650 PS (478 kW)<br>
+            Torque: 800 Nm<br>
+            Transmission: 8-speed PDK<br>
+            0–100 km/h: 2.7 sec<br>
+            Top Speed: 330 km/h</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://vehicle-images.dealerinspire.com/e3dc-110012062/W1KAF8AB3RR221723/5078daafea0bf9035b671b7ea1fdb0ed.jpg" alt="Mercedes-Benz S-Class">
+            <p><strong>Mercedes-Benz S-Class</strong><br>
+            Flagship luxury sedan<br>
+            Engines: Inline-6, V8, Hybrids, AMG<br>
+            Transmission: 9-speed<br>
+            Generation: W223 (since 2020)</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB92InrJ9I2ib1H9PXpn08K0K6g9f9xOdYSg&s" alt="Tesla Model S Plaid">
+            <p><strong>Tesla Model S Plaid</strong><br>
+            0–60 mph: 1.99 sec<br>
+            Top Speed: 200 mph<br>
+            Horsepower: 1,020 HP<br>
+            Range: Up to 396 miles<br>
+            Interior: 17" touchscreen, 22 speakers<br>
+            Starting Price: $91,880</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKFCd6qq0AJelYCSkLptuH62c358aUtxf9Aw&s" alt="Range Rover">
+            <p><strong>Range Rover</strong><br>
+            Brand: Land Rover (Jaguar Land Rover)<br>
+            Launched: 1970<br>
+            Type: Luxury off-road SUV<br>
+            Variants: Classic, Sport, Velar</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLUPkJazMFZL-uMPmbdNUCTXDl3wmDKmJEzQ&s" alt="Ferrari 296 GTB">
+            <p><strong>Ferrari 296 GTB</strong><br>
+            Launched: 2021<br>
+            Engine: 3.0L V6 + Electric Motor<br>
+            Power: 819 HP<br>
+            0–100 km/h: 2.9 sec<br>
+            Top Speed: 330+ km/h<br>
+            Transmission: 8-speed</p>
+        </div>
+
+        <div class="car-card">
+            <img src="https://mystrongad.com/LRR_LandRoverRoanoke/Interactive/Range%20Rover%20Sport/2024/2024-Range-Rover-Sport-White-SM.webp" alt="BMW i7">
+            <p><strong>BMW i7 xDrive60</strong><br>
+            Electric Luxury Sedan<br>
+            Launched: 2022<br>
+            Dual Electric Motors<br>
+            Power: 544 HP<br>
+            0–100 km/h: 4.7 sec<br>
+            Range (WLTP): ~600+ km</p>
+        </div>
+
+    </div>
+
+
+    <script>
+        function randomColor() {
+          return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+        }
+      
+        function updateGradient() {
+          const color1 = randomColor();
+          const color2 = randomColor();
+          const angle = Math.floor(Math.random() * 360);
+          document.body.style.background = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+        }
+      
+        // Change gradient every 5 seconds
+        setInterval(updateGradient, 5000);
+      </script>
 
 </body>
 </html>

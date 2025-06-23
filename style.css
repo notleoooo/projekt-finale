@@ -1,16 +1,24 @@
-.aleafurniture {
-    background-color:white;
-    height: 200px;
-    width: 200px;
-}
-body {
- background-image: url("https://linetec.com/wp-content/uploads/2023/04/Porsche-for-Gallery-Page_web.jpg ");
- background-color: #cccccc;
-}
-p{
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
 
-      background-color:white;
-    height: 200px;
-    width: 200px;
-}
+  body {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    transition: background 1s ease-in-out;
+  }
 
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
